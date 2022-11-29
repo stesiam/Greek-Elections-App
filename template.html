@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Material Icons -->
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />   
+
+    {{ headContent() }}
+
+    <!-- Title and Favicon -->
+
+    <title>Document</title>
+    
+    
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+
+        <div class="container">
+            <header class="blog header d-flex justify-content-center">
+                <nav class="navbar navbar-light pt-2 pb-0">
+                    <span class="material-symbols-outlined">
+                        how_to_vote
+                    </span>
+                    <a class="navbar-brand pl-2" href="#">Greek Parliament Seats Calculator</a>
+                </nav>
+            </header>
+        </div>
+
+        <div class="container">
+            <div class="container justify-content-center">
+                <span>
+                    <hr>
+                </span>
+            </div>
+        </div>
+
+
+
+
+        <!-- Body 1 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="card" id="border-nd">
+                        <div class="card-header">ND</div>
+                        <div class="card-body">
+                            {{ button }}
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card" id="border-syriza">
+                        <div class="card-header">SYRIZA</div>
+                        <div class="card-body">
+                            {{button}}
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card" id="border-pasok">
+                        <div class="card-header">PASOK</div>
+                        <div class="card-body">
+                            {{ button }}
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card" id="border-kke">
+                        <div class="card-header">KKE</div>
+                        <div class="card-body">
+                            {{ button }}
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card" id="border-ell-lisi">
+                        <div class="card-header">ELL. LISI</div>
+                        <div class="card-body">
+                            {{ button }}
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card" id="border-mera-25">
+                        <div class="card-header">MERA 25</div>
+                        <div class="card-body">
+                            {{ button }}
+                        </div>
+                      </div>
+                </div>
+            </div>
+            
+            <!-- Second row of obs.-->
+            <span></span>
+
+
+
+            <div class="row pt-4  justify-content-center">
+                <div class="col-md-2">
+                    <div class="card" id="border-other1">
+                        <div class="card-header">Other #1</div>
+                        <div class="card-body">
+                            {{ button }}
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card" id="border-other2">
+                        <div class="card-header">Other #2</div>
+                        <div class="card-body">
+                            {{ button }}
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card" id="border-other3">
+                        <div class="card-header">Other #3</div>
+                        <div class="card-body">
+                            {{ button }}
+                        </div>
+                      </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4 text-center">
+                    <h5>Results</h5>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h5>Parliament</h5>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        </main>
+
+
+        <!-- Footer -->
+
+
+        <footer class="footer fixed-bottom">
+            <ul class="nav justify-content-center border-t">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Code</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">GitHub Profile</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Personal Website</a></li>
+            </ul>
+            <p class="text-center text-muted">stesiam, 2022 © </p>
+        </footer>
+    </div>
+</body>
+
+</html>
