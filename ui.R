@@ -1,5 +1,5 @@
 htmlTemplate("template.html",
-             button = actionButton("action", "Calculate !"),
+             button = actionButton("action", "Calculate !", class = "btn-primary"),
              
              slider_nd = sliderInput("nd", "", 25, 50 , 39.9, step = 0.1),
              slider_syriza = sliderInput("syriza", "", 20, 45 , 31,5, step = 0.1),
