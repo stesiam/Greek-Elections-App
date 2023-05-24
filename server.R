@@ -1,11 +1,29 @@
 server <- function(input, output) {
-  output$nd_seats <- renderText({ floor(input$nd/0.5) })
-  output$syriza_seats <- renderText({ floor(input$syriza/0.5) })
-  output$pasok_seats <- renderText({ floor(input$pasok/0.5) })
-  output$kke_seats <- renderText({ floor(input$kke/0.5) })
-  output$ellisi_seats <- renderText({ floor(input$ellisi/0.5) })
-  output$mera25_seats <- renderText({ floor(input$mera25/0.5) })
-  output$other1_seats <- renderText({ floor(input$other1/0.5) })
-  output$other2_seats <- renderText({ floor(input$other2/0.5) })
-  output$other3_seats <- renderText({ floor(input$other3/0.5) })
+  
+  inparl = reactive({
+    x = c(input$nd, input$syriza, input$pasok,
+    input$kke, input$ellisi, input$mera25,
+    input$other1, input$other2, input$other3)
+    inparl = 0
+    toallocate = 100
+    for (i in 1:length(x)){
+      if( x[i]>= 3)
+        inparl = inparl + x[i]
+        toallocate = toallocate - x[i]
+      }
+    return(list(inparl, toallocate))
+  })
+
+  output$nd_seats <- renderText({ nobonus(input$nd, inparl()[[1]]) })
+  output$syriza_seats <- renderText({  nobonus(input$syriza, inparl()[[1]])   })
+  output$pasok_seats <- renderText({  nobonus(input$pasok, inparl()[[1]])  })
+  output$kke_seats <- renderText({  nobonus(input$kke, inparl()[[1]])  })
+  output$ellisi_seats <- renderText({  nobonus(input$ellisi, inparl()[[1]])  })
+  output$mera25_seats <- renderText({  nobonus(input$mera25, inparl()[[1]])  })
+  output$other1_seats <- renderText({ nobonus(input$other1, inparl()[[1]])  })
+  output$other2_seats <- renderText({ nobonus(input$other2, inparl()[[1]]) })
+  output$other3_seats <- renderText({ nobonus(input$other3, inparl()[[1]]) })
+  
+  output$toallocate_server <- renderText({ inparl()[[2]] })
+  output$oop_server <- renderText({ 100 - inparl()[[1]] })
 }

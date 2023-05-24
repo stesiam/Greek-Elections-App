@@ -19,4 +19,7 @@ htmlTemplate("template.html",
              results_other2 = verbatimTextOutput("other2_seats"),
              slider_other3 = sliderInput("other3", "",  1, 10, 1, step = 0.1),
              results_other3 = verbatimTextOutput("other3_seats"),
+             
+             toallocate = verbatimTextOutput("toallocate_server"),
+             oop = verbatimTextOutput("oop_server"),
 )
