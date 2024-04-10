@@ -1,0 +1,46 @@
+.title-comb {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5em;
+	font-family: Ubuntu;
+}
+
+.wrapper-card{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1em;
+}
+
+.custom-card{
+  display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+  background-color: white;
+  border-radius: 1em;
+  width: 330px;
+	padding: 0.5em;
+}
+
+@media only screen and (max-width: 600px) {
+.custom-navbar{
+  display: flex;
+  flex-direction: column;
+} 
+}
+
+.selector-electoral{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+html{
+  background-image: url("parl.jpg");
+}
+
+.shiny-output-error, .shiny-output-error:before { display: none; }
