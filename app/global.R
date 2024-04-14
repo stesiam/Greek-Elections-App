@@ -1,8 +1,8 @@
-# 
-# a = data.frame(
-#   "Party" = c("ND", "SYRIZA", "PASOK", "Spart", "Ellisi", "Niki", "Plefsi", "Mera", "Other1", "Other2"),
-#   "Perc" = c(41, 17, 11, 8, 7, 3, 3, 4, 2, 2)
-# )
+
+a = data.frame(
+  "Party" = c("ND", "SYRIZA", "PASOK","KKE","Ellisi", "Niki", "Plefsi", "Mera", "Other1", "Other2"),
+  "Perc" = c(18, 30, 11, 8, 7, 3, 3, 4, 3, 2)
+)
 
 
 calculate_seats = function(a){
@@ -12,12 +12,15 @@ calculate_seats = function(a){
   pr = allocated_prop_seats(max(a$Perc))
   
  s = a |>
-    mutate(AdjPerc = ifelse(Perc >= 3, Perc / inparl, 0),
+    mutate(
+      id = 1:nrow(a),
+      AdjPerc = ifelse(Perc >= 3, Perc / inparl, 0),
            Seats = pr * AdjPerc,
            IntSeats = floor(Seats),
-           RestSeats = Seats - IntSeats)
-
-  s$IntSeats[1] <- s$IntSeats[1] + (300 - pr)
+           RestSeats = Seats - IntSeats) |>
+   arrange(-IntSeats)
+  
+   s$IntSeats[1] <- s$IntSeats[1] + (300 - pr)
   
   unallocated_seats = 300 - sum(s$IntSeats)
   
@@ -29,7 +32,7 @@ calculate_seats = function(a){
   }
   
   s = s|>
-    arrange(-IntSeats) |>
+    arrange(id) |>
     select(-c(AdjPerc, Seats, RestSeats))
   
   return(s)

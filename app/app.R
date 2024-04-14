@@ -5,6 +5,7 @@ library(dplyr)
 
 source("global.R")
 
+
 i18n <- Translator$new(translation_csvs_path = "www/translations/")
 i18n$set_translation_language("en")
 
@@ -31,7 +32,7 @@ ui <- div(
         ),
   div(class = "wrapper-card",
   div(class = "custom-card",
-      div(class = "card-title", "Choose Electoral System:"),
+      div(class = "card-title", i18n$t("Choose Electoral System: ")),
       div(class = "selector-electoral",
           div(class = "py-1 max-w-2xl mx-auto",
               selectizeInput(width = "320", "elect_systems", label = "",
@@ -194,8 +195,6 @@ ui <- div(
 )
 # Define server logic required to draw a histogram
 server <- function(input, output, session) {
-  
-  
 
     data = reactive({
      data.frame(
@@ -210,7 +209,7 @@ server <- function(input, output, session) {
     calc_seats = reactive({
       data = data() 
       
-      result <- if (input$elect_systems == "bonus40") {
+      if (input$elect_systems == "bonus40") {
         data %>%
           mutate(Perc = as.numeric(Perc)) %>%
           bonus40()
@@ -228,7 +227,6 @@ server <- function(input, output, session) {
           calculate_seats()
       }
       
-      return(result)
     })
     
   
