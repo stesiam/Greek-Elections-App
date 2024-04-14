@@ -20,4 +20,4 @@ jobs:
         docker build . --file Dockerfile --tag stesiam/greek-elections-app:latest
     - name: Push image to DockerHub
       run:
-        docker push stesiam/ageing-dashboard:latest
+        docker push stesiam/greek-elections-app:latest
