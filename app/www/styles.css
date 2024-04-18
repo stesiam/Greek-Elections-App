@@ -21,16 +21,10 @@
 	align-items: center;
   background-color: white;
   border-radius: 1em;
-  width: 330px;
+  width: 300px;
 	padding: 0.5em;
 }
 
-@media only screen and (max-width: 600px) {
-.custom-navbar{
-  display: flex;
-  flex-direction: column;
-} 
-}
 
 .selector-electoral{
   display: flex;
@@ -44,3 +38,21 @@ html{
 }
 
 .shiny-output-error, .shiny-output-error:before { display: none; }
+
+@media (max-width: 600px) {
+  
+  
+  
+.custom-navbar{
+  display: flex;
+  flex-direction: column;
+} 
+
+.table tbody tr th:nth-child(2){
+  display: none;
+}
+
+.table thead tr th:nth-child(2){
+  display: none;
+}
+}

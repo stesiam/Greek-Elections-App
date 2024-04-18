@@ -13,10 +13,14 @@ i18n$set_translation_language("en")
 
 # Define UI for application that draws a histogram using HTML divs and tailwind
 ui <- div(
-  usei18n(i18n),
-  # Load Tailwind CSS Just-in-time
-  use_daisyui(),
-  includeCSS("www/styles.css"),
+  tags$head(
+    tags$meta(name = "viewport",
+              content="width=device-width, initial-scale = 1"),
+    usei18n(i18n),
+    # Load Tailwind CSS Just-in-time
+    use_daisyui(),
+    includeCSS("www/styles.css")
+  ),
   
   # Title
     div(class = "custom-navbar navbar bg-base-100 px-5",
@@ -35,12 +39,12 @@ ui <- div(
       div(class = "card-title", i18n$t("Choose Electoral System: ")),
       div(class = "selector-electoral",
           div(class = "py-1 max-w-2xl mx-auto",
-              selectizeInput(width = "320", "elect_systems", label = "",
+              selectizeInput(width = "280", "elect_systems", label = "",
                              choices = c(
-                               "Bonus40 (2007 - 2009)" = "bonus40", 
-                               "Bonus50 (2012 - 2019)" = "bonus50", 
+                               "Bonus 40 (2007-09)" = "bonus40", 
+                               "Bonus 50 (2012-19)" = "bonus50", 
                                "Proportional (2023A)" = "nobonus",
-                               "Proportional Bonus (2023B - current)" = "propbonus"),
+                               "Proportional Bonus (2023B - )" = "propbonus"),
                              selected = "propbonus")
           )
       )
