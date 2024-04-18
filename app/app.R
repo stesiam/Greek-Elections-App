@@ -39,13 +39,7 @@ ui <- div(
       div(class = "card-title", i18n$t("Choose Electoral System: ")),
       div(class = "selector-electoral",
           div(class = "py-1 max-w-2xl mx-auto",
-              selectizeInput(width = "280", "elect_systems", label = "",
-                             choices = c(
-                               "Bonus 40 (2007-09)" = "bonus40", 
-                               "Bonus 50 (2012-19)" = "bonus50", 
-                               "Proportional (2023A)" = "nobonus",
-                               "Proportional Bonus (2023B - )" = "propbonus"),
-                             selected = "propbonus")
+              uiOutput("tab_content")
           )
       )
   )
@@ -200,6 +194,24 @@ ui <- div(
 # Define server logic required to draw a histogram
 server <- function(input, output, session) {
 
+  default_selected <- reactiveVal("propbonus")
+  
+  
+observeEvent(input$selected_language, {
+  output$tab_content <- renderUI({
+    selectInput(
+      inputId = "elect_systems",
+      label = "",
+      width = "280px",
+      choices = c(setNames(c('bonus40'), i18n$t("Bonus 40 Seats (2007-09)")),
+                  setNames(c('bonus50'), i18n$t("Bonus 50 Seats (2012-2019)")),
+                  setNames(c('nobonus'), i18n$t("No Bonus (2023Α)")),
+                  setNames(c('propbonus'), i18n$t("Proportional Bonus (2023Β-"))
+    ),
+    selected = default_selected())
+  })
+})
+
     data = reactive({
      data.frame(
        "Party" = c("ND", "SYRIZA", "PASOK","KKE","Ellisi", "Niki", "Plefsi", "Mera", "Other1", "Other2"),
@@ -211,6 +223,7 @@ server <- function(input, output, session) {
     
     
     calc_seats = reactive({
+      req(input$elect_systems) 
       data = data() 
       
       if (input$elect_systems == "bonus40") {
@@ -233,7 +246,7 @@ server <- function(input, output, session) {
       
     })
     
-  
+
     output$nd_seats = renderText({ calc_seats()$IntSeats[[1]] })
     output$syriza_seats = renderText({ calc_seats()$IntSeats[[2]] })
     output$pasok_seats = renderText({ calc_seats()$IntSeats[[3]] })
