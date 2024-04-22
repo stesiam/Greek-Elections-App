@@ -203,7 +203,7 @@ observeEvent(input$selected_language, {
       inputId = "elect_systems",
       label = "",
       width = "280px",
-      choices = c(setNames(c('bonus40'), i18n$t("Bonus 40 Seats (2007-09)")),
+      choices = c(setNames(c('bonus40'), i18n$t("Bonus 40 Seats (2007-2009)")),
                   setNames(c('bonus50'), i18n$t("Bonus 50 Seats (2012-2019)")),
                   setNames(c('nobonus'), i18n$t("No Bonus (2023Α)")),
                   setNames(c('propbonus'), i18n$t("Proportional Bonus (2023Β-"))
