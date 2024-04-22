@@ -2,6 +2,7 @@ library(shiny)
 library(shiny.tailwind)
 library(shiny.i18n)
 library(dplyr)
+library(cookies)
 
 source("global.R")
 
@@ -12,7 +13,8 @@ i18n$set_translation_language("en")
 # options(shiny.launch.browser = .rs.invokeShinyWindowExternal)
 
 # Define UI for application that draws a histogram using HTML divs and tailwind
-ui <- div(
+ui <- add_cookie_handlers(
+  div(
   tags$head(
     tags$meta(name = "viewport",
               content="width=device-width, initial-scale = 1"),
@@ -191,8 +193,32 @@ ui <- div(
   )
 )
 )
+)
 # Define server logic required to draw a histogram
 server <- function(input, output, session) {
+  
+  ## Set cookies to remember language selection
+  
+  observeEvent(
+    input$selected_language,
+    {
+      set_cookie(
+        cookie_name = "lang_cookie",
+        cookie_value = input$selected_language
+      )
+    }
+  )
+  
+  observeEvent(
+    get_cookie("lang_cookie"),
+    updateSliderInput(
+      inputId = "selected_language",
+      value = get_cookie("lang_cookie")
+    ),
+    once = TRUE
+  )
+  
+  ## End of cookies
 
   default_selected <- reactiveVal("propbonus")
   

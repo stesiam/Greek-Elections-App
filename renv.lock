@@ -9,17 +9,6 @@
     ]
   },
   "Packages": {
-    "PKI": {
-      "Package": "PKI",
-      "Version": "0.1-12",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "base64enc"
-      ],
-      "Hash": "999d7960fe5a5fd98267d0b68fd10065"
-    },
     "R6": {
       "Package": "R6",
       "Version": "2.5.1",
@@ -235,15 +224,20 @@
     },
     "fontawesome": {
       "Package": "fontawesome",
-      "Version": "0.5.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
+      "Version": "0.5.2.9000",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "fontawesome",
+      "RemoteUsername": "rstudio",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "32617f7c9d5bbc03f1b37d7f2cf5b3e87b85bfc1",
       "Requirements": [
         "R",
         "htmltools",
         "rlang"
       ],
-      "Hash": "c2efdd5f0bcd1ea861c2d4e2a883a67d"
+      "Hash": "05d930fdf8937a77853f474607c8e3f6"
     },
     "fs": {
       "Package": "fs",
@@ -386,13 +380,13 @@
     },
     "openssl": {
       "Package": "openssl",
-      "Version": "2.1.2",
+      "Version": "2.1.1",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "askpass"
       ],
-      "Hash": "ea2475b073243d9d338aa8f086ce973e"
+      "Hash": "2a0dc8c6adfb6f032e4d4af82d258ab5"
     },
     "packrat": {
       "Package": "packrat",
@@ -497,26 +491,21 @@
     },
     "rsconnect": {
       "Package": "rsconnect",
-      "Version": "1.2.2",
+      "Version": "0.8.29",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
-        "PKI",
         "R",
-        "cli",
         "curl",
         "digest",
         "jsonlite",
-        "lifecycle",
         "openssl",
         "packrat",
-        "renv",
-        "rlang",
         "rstudioapi",
         "tools",
         "yaml"
       ],
-      "Hash": "77e9ed1307e84cd7ca1c7fb2cd7bbfe2"
+      "Hash": "fe178fc15af80952f546aafedf655b36"
     },
     "rstudioapi": {
       "Package": "rstudioapi",
