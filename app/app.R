@@ -69,7 +69,17 @@ ui <- add_cookie_handlers(
                                 )
                               )
                             ),
-                            tags$th(i18n$t("New Democracy")),
+                            tags$th(i18n$t("New Democracy"),
+                                    tags$span(class = "party-orientation", 
+                                              i18n$t("Center-right/Right")),
+                                    tags$div(class = "established",
+                                             tags$div(
+                                               icon("calendar-days")
+                                             ),
+                                              tags$div(
+                                                tags$p("1974"))
+                                             )
+                                    ),
                             tags$th(tags$input(id = "nd_pct", value =40.56, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
                             tags$th(textOutput("nd_seats"))
                           ),
@@ -81,7 +91,16 @@ ui <- add_cookie_handlers(
                                   )
                               )
                             ),
-                            tags$th(i18n$t("SYRIZA")),
+                            tags$th(i18n$t("SYRIZA"),
+                                    tags$span(class = "party-orientation", 
+                                              i18n$t("Center-left/Left")),
+                                    tags$div(class = "established",
+                                             tags$div(
+                                               icon("calendar-days")
+                                             ),
+                                             tags$div(
+                                               tags$p("2004"))
+                                    )),
                             tags$th(tags$input(id = "syriza_pct", value =17.83, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
                             tags$th(textOutput("syriza_seats"))
                           ),
@@ -93,7 +112,16 @@ ui <- add_cookie_handlers(
                                   )
                               )
                             ),
-                            tags$th(i18n$t("PASOK")),
+                            tags$th(i18n$t("PASOK"),
+                                    tags$span(class = "party-orientation", 
+                                              i18n$t("Center-left")),
+                                    tags$div(class = "established",
+                                             tags$div(
+                                               icon("calendar-days")
+                                             ),
+                                             tags$div(
+                                               tags$p("1974"))
+                                    )),
                             tags$th(tags$input(id = "pasok_pct", value =11.84, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
                             tags$th(textOutput("pasok_seats"))
                           ),
@@ -105,7 +133,16 @@ ui <- add_cookie_handlers(
                                   )
                               )
                             ),
-                            tags$th(i18n$t("KKE")),
+                            tags$th(i18n$t("KKE"),
+                                    tags$span(class = "party-orientation", 
+                                              i18n$t("Far-left")),
+                                    tags$div(class = "established",
+                                             tags$div(
+                                               icon("calendar-days")
+                                             ),
+                                             tags$div(
+                                               tags$p("1918"))
+                                    )),
                             tags$th(tags$input(id = "kke_pct", value =7.69, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
                             tags$th(textOutput("kke_seats"))
                           ),
@@ -117,7 +154,16 @@ ui <- add_cookie_handlers(
                                   )
                               )
                             ),
-                            tags$th(i18n$t("Elliniki Lysi")),
+                            tags$th(i18n$t("Elliniki Lysi"),
+                                    tags$span(class = "party-orientation", 
+                                              i18n$t("Right/Far-right")),
+                                    tags$div(class = "established",
+                                             tags$div(
+                                               icon("calendar-days")
+                                             ),
+                                             tags$div(
+                                               tags$p("2016"))
+                                    )),
                             tags$th(tags$input(id = "ellisi_pct", value =4.44, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
                             tags$th(textOutput("ellisi_seats"))
                           ),
@@ -129,7 +175,16 @@ ui <- add_cookie_handlers(
                                   )
                               )
                             ),
-                            tags$th(i18n$t("Niki")),
+                            tags$th(i18n$t("Niki"),
+                                    tags$span(class = "party-orientation", 
+                                              i18n$t("Far-right")),
+                                    tags$div(class = "established",
+                                             tags$div(
+                                               icon("calendar-days")
+                                             ),
+                                             tags$div(
+                                               tags$p("2019"))
+                                    )),
                             tags$th(tags$input(id = "niki_pct", value =3.7, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
                             tags$th(textOutput("niki_seats"))
                           ),
@@ -141,7 +196,16 @@ ui <- add_cookie_handlers(
                                   )
                               )
                             ),
-                            tags$th(i18n$t("Plefsi")),
+                            tags$th(i18n$t("Plefsi"),
+                                    tags$span(class = "party-orientation", 
+                                              i18n$t("Catch-all")),
+                                    tags$div(class = "established",
+                                             tags$div(
+                                               icon("calendar-days")
+                                             ),
+                                             tags$div(
+                                               tags$p("2016"))
+                                    )),
                             tags$th(tags$input(id = "plefsi_pct", value =3.17,type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
                             tags$th(textOutput("plefsi_seats"))
                           ),
@@ -153,7 +217,16 @@ ui <- add_cookie_handlers(
                                   )
                               )
                             ),
-                            tags$th(i18n$t("MeRA25")),
+                            tags$th(i18n$t("MeRA25"),
+                                    tags$span(class = "party-orientation", 
+                                              i18n$t("Left")),
+                                    tags$div(class = "established",
+                                             tags$div(
+                                               icon("calendar-days")
+                                             ),
+                                             tags$div(
+                                               tags$p("2018"))
+                                    )),
                             tags$th(tags$input(id = "mera25_pct", value =2.5, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
                             tags$th(textOutput("mera_seats"))
                           ),

@@ -56,3 +56,21 @@ html{
   display: none;
 }
 }
+
+.party-orientation{
+  display: block;
+  font-family: EB Garamond;
+  font-weight: normal;
+}
+
+.established{
+	display: flex;
+	flex-direction: row;
+	gap: 0.5em;
+	font-size: 0.8em;
+	align-items: center;
+}
+
+.established p{
+  font
+}
