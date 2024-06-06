@@ -70,8 +70,12 @@ ui <- add_cookie_handlers(
                               )
                             ),
                             tags$th(i18n$t("New Democracy"),
-                                    tags$span(class = "party-orientation", 
-                                              i18n$t("Center-right/Right")),
+                                    tags$div(class = "party-orientation", 
+                                             tags$div(
+                                               icon("compass")
+                                             ),
+                                             tags$div(i18n$t("Center-right/Right"))
+                                    ),
                                     tags$div(class = "established",
                                              tags$div(
                                                icon("calendar-days")
@@ -92,8 +96,12 @@ ui <- add_cookie_handlers(
                               )
                             ),
                             tags$th(i18n$t("SYRIZA"),
-                                    tags$span(class = "party-orientation", 
-                                              i18n$t("Center-left/Left")),
+                                    tags$div(class = "party-orientation", 
+                                             tags$div(
+                                               icon("compass")
+                                             ),
+                                             tags$div(i18n$t("Center-left/Left"))
+                                    ),
                                     tags$div(class = "established",
                                              tags$div(
                                                icon("calendar-days")
@@ -113,8 +121,12 @@ ui <- add_cookie_handlers(
                               )
                             ),
                             tags$th(i18n$t("PASOK"),
-                                    tags$span(class = "party-orientation", 
-                                              i18n$t("Center-left")),
+                                    tags$div(class = "party-orientation", 
+                                             tags$div(
+                                               icon("compass")
+                                             ),
+                                             tags$div(i18n$t("Center-left"))
+                                    ),
                                     tags$div(class = "established",
                                              tags$div(
                                                icon("calendar-days")
@@ -134,8 +146,12 @@ ui <- add_cookie_handlers(
                               )
                             ),
                             tags$th(i18n$t("KKE"),
-                                    tags$span(class = "party-orientation", 
-                                              i18n$t("Far-left")),
+                                    tags$div(class = "party-orientation", 
+                                             tags$div(
+                                               icon("compass")
+                                             ),
+                                             tags$div(i18n$t("Far-left"))
+                                    ),
                                     tags$div(class = "established",
                                              tags$div(
                                                icon("calendar-days")
@@ -155,8 +171,12 @@ ui <- add_cookie_handlers(
                               )
                             ),
                             tags$th(i18n$t("Elliniki Lysi"),
-                                    tags$span(class = "party-orientation", 
-                                              i18n$t("Right/Far-right")),
+                                    tags$div(class = "party-orientation", 
+                                             tags$div(
+                                               icon("compass")
+                                             ),
+                                             tags$div(i18n$t("Right/Far-right"))
+                                    ),
                                     tags$div(class = "established",
                                              tags$div(
                                                icon("calendar-days")
@@ -176,8 +196,12 @@ ui <- add_cookie_handlers(
                               )
                             ),
                             tags$th(i18n$t("Niki"),
-                                    tags$span(class = "party-orientation", 
-                                              i18n$t("Far-right")),
+                                    tags$div(class = "party-orientation", 
+                                             tags$div(
+                                               icon("compass")
+                                             ),
+                                             tags$div(i18n$t("Far-right"))
+                                    ),
                                     tags$div(class = "established",
                                              tags$div(
                                                icon("calendar-days")
@@ -197,8 +221,12 @@ ui <- add_cookie_handlers(
                               )
                             ),
                             tags$th(i18n$t("Plefsi"),
-                                    tags$span(class = "party-orientation", 
-                                              i18n$t("Catch-all")),
+                                    tags$div(class = "party-orientation", 
+                                             tags$div(
+                                               icon("compass")
+                                             ),
+                                             tags$div(i18n$t("Catch-all"))
+                                    ),
                                     tags$div(class = "established",
                                              tags$div(
                                                icon("calendar-days")
@@ -218,8 +246,12 @@ ui <- add_cookie_handlers(
                               )
                             ),
                             tags$th(i18n$t("MeRA25"),
-                                    tags$span(class = "party-orientation", 
-                                              i18n$t("Left")),
+                                    tags$div(class = "party-orientation", 
+                                             tags$div(
+                                               icon("compass")
+                                             ),
+                                              tags$div(i18n$t("Left"))
+                                             ),
                                     tags$div(class = "established",
                                              tags$div(
                                                icon("calendar-days")

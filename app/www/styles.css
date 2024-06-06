@@ -57,10 +57,14 @@ html{
 }
 }
 
-.party-orientation{
-  display: block;
-  font-family: EB Garamond;
-  font-weight: normal;
+
+.party-orientation {
+	display: flex;
+	font-family: Montserrat;
+	font-weight: normal;
+	font-size: 0.8em;
+	gap: 0.5em;
+	align-items: center;
 }
 
 .established{
