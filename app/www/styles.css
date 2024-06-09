@@ -71,10 +71,9 @@ html{
 	display: flex;
 	flex-direction: row;
 	gap: 0.5em;
-	font-size: 0.8em;
+	font-size: 0.7em;
 	align-items: center;
+	font-family: Ubuntu;
+	font-weight: normal;
 }
 
-.established p{
-  font
-}
