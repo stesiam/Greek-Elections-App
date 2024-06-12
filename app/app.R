@@ -85,7 +85,7 @@ ui <- add_cookie_handlers(
                                                 tags$p("1974"))
                                              )
                                     ),
-                            tags$th(tags$input(id = "nd_pct", value =27.9, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
+                            tags$th(tags$input(id = "nd_pct", value =28.3, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
                             tags$th(textOutput("nd_seats"))
                           ),
                           tags$tr(
@@ -137,7 +137,7 @@ ui <- add_cookie_handlers(
                                              tags$div(
                                                tags$p("1974"))
                                     )),
-                            tags$th(tags$input(id = "pasok_pct", value =12.89, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
+                            tags$th(tags$input(id = "pasok_pct", value =12.8, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
                             tags$th(textOutput("pasok_seats"))
                           ),
                           tags$tr(
@@ -163,7 +163,7 @@ ui <- add_cookie_handlers(
                                              tags$div(
                                                tags$p("2016"))
                                     )),
-                            tags$th(tags$input(id = "ellisi_pct", value =9.52, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
+                            tags$th(tags$input(id = "ellisi_pct", value =9.3, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
                             tags$th(textOutput("ellisi_seats"))
                           ),
                           tags$tr(
@@ -189,7 +189,7 @@ ui <- add_cookie_handlers(
                                              tags$div(
                                                tags$p("1918"))
                                     )),
-                            tags$th(tags$input(id = "kke_pct", value =9.3, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
+                            tags$th(tags$input(id = "kke_pct", value =9.25, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
                             tags$th(textOutput("kke_seats"))
                           ),
                           tags$tr(
@@ -216,7 +216,7 @@ ui <- add_cookie_handlers(
                                                tags$p("2019"))
                                     )
                                     ),
-                            tags$th(tags$input(id = "niki_pct", value =4.43, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
+                            tags$th(tags$input(id = "niki_pct", value =4.37, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
                             tags$th(textOutput("niki_seats"))
                           ),
                           tags$tr(
@@ -242,7 +242,7 @@ ui <- add_cookie_handlers(
                                              tags$div(
                                                tags$p("2016"))
                                     )),
-                            tags$th(tags$input(id = "plefsi_pct", value =3.42,type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
+                            tags$th(tags$input(id = "plefsi_pct", value =3.4,type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
                             tags$th(textOutput("plefsi_seats"))
                           ),
                           tags$tr(
@@ -267,7 +267,7 @@ ui <- add_cookie_handlers(
                                              tags$div(
                                                tags$p("2023"))
                                     )),
-                            tags$th(tags$input(id = "foni_pct", value =3.06, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
+                            tags$th(tags$input(id = "foni_pct", value =3.04, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
                             tags$th(textOutput("foni_seats"))
                           ),
                           tags$tr(
@@ -293,14 +293,14 @@ ui <- add_cookie_handlers(
                                              tags$div(
                                                tags$p("2018"))
                                     )),
-                            tags$th(tags$input(id = "mera25_pct", value =2.46, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
+                            tags$th(tags$input(id = "mera25_pct", value =2.54, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
                             tags$th(textOutput("mera_seats"))
                           ),
                           tags$tr(
                             tags$th(
                               div(class="avatar",
                                   div(class="mask mask-squircle w-12 h-12",
-                                      tags$img(src="", alt="Nea Aristera logo"),
+                                      tags$img(src="nar_logo.svg", alt="Nea Aristera logo"),
                                   )
                               )
                             ),
@@ -319,7 +319,7 @@ ui <- add_cookie_handlers(
                                              tags$div(
                                                tags$p("2024"))
                                     )),
-                            tags$th(tags$input(id = "nar_pct", value =2.41, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
+                            tags$th(tags$input(id = "nar_pct", value =2.45, type="text", placeholder="Type here", class="input input-bordered input-primary w-full max-w-xs")),
                             tags$th(textOutput("nar_seats"))
                           ),
                           tags$tr(
