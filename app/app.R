@@ -233,7 +233,7 @@ ui <- add_cookie_handlers(
                                                icon("user-tie")
                                              ),
                                              tags$div(
-                                               tags$p(i18n$t("Konstantopoulou, Z.")))
+                                               tags$p(i18n$t("Konstantopoulou Z.")))
                                     ),
                                     tags$div(class = "established",
                                              tags$div(
