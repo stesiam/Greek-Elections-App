@@ -357,7 +357,7 @@ ui <- add_cookie_handlers(
     class = "footer footer-center p-4 bg-base-300 text-base-content",
     tags$div(class = "flex flex-row justify-center align-center", 
       tags$p(
-      "Copyright ©", tags$a(class = "link link-primary", href="https://www.stesiam.com/", target="_blank", "stesiam"), ", ", "2024")
+      "Copyright ©", tags$a(class = "link link-primary", href="https://www.stesiam.com/", target="_blank", "stesiam,"), "2024")
   )
 )
 )
