@@ -3,6 +3,7 @@ library(shiny.tailwind)
 library(shiny.i18n)
 library(dplyr)
 library(cookies)
+library(htmltools)
 
 source("global.R")
 
@@ -30,10 +31,12 @@ ui <- add_cookie_handlers(
             a(href = "#", class="btn btn-ghost text-xl", 
               tags$div(class = "title-comb", icon("check-to-slot"), tags$h1(i18n$t("Greek Elections App"))))),
         div(class = "flex-none gap-x-3",
-            selectInput('selected_language',width = "10em",
+            htmltools::tagAppendAttributes(selectInput('selected_language',width = "10em",
                         label = "",
                         choices = c("English" = "en", "Ελληνικά" = "el"),
-                        selected = i18n$get_key_translation())
+                        selected = i18n$get_key_translation()),
+                        
+                        readonly = "", .cssSelector = "input")
             ),
         ),
   div(class = "wrapper-card",
@@ -390,7 +393,7 @@ server <- function(input, output, session) {
   
 observeEvent(input$selected_language, {
   output$tab_content <- renderUI({
-    selectInput(
+    htmltools::tagAppendAttributes(selectInput(
       inputId = "elect_systems",
       label = "",
       width = "280px",
@@ -399,7 +402,9 @@ observeEvent(input$selected_language, {
                   setNames(c('nobonus'), i18n$t("No Bonus (2023Α)")),
                   setNames(c('propbonus'), i18n$t("Proportional Bonus (2023Β-"))
     ),
-    selected = default_selected())
+    selected = default_selected()),
+    
+    readonly = "", .cssSelector = "input")
   })
 })
 
