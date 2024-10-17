@@ -50,6 +50,82 @@ ui <- add_cookie_handlers(
   )
   ),
   
+  tags$div(
+    class = "flex flex-wrap justify-around gap-6 px-4 py-8",
+    
+    # Card 1 - Analytics (with number)
+    tags$div(
+      class = "card w-full sm:w-80 md:w-64 bg-base-100 shadow-xl",
+      tags$div(
+        class = "card-body",
+        tags$div(
+          class = "flex items-center",
+          tags$i(class = "fas fa-chart-line text-2xl text-blue-600"),  # FontAwesome icon
+          tags$h2(class = "card-title ml-4", i18n$t("Percentage Difference"))
+        ),
+        tags$p(i18n$t("Between 1st and 2nd party")),
+        tags$div(
+          class = "text-4xl text-center font-bold text-blue-600 mt-4",
+          textOutput("diff_first_second")  # Number to display
+        )
+      )
+    ),
+    
+    # Card 2 - Parliament Parties
+    tags$div(
+      class = "card w-full sm:w-80 md:w-64 bg-base-100 shadow-xl",
+      tags$div(
+        class = "card-body",
+        tags$div(
+          class = "flex items-center",
+          tags$i(class = "fas fa-users text-2xl text-green-600"),  # FontAwesome icon
+          tags$h2(class = "card-title ml-4", i18n$t("Parliament Parties"))
+        ),
+        tags$p(i18n$t("Number of parties to elect MPs")),
+        tags$div(
+          class = "text-4xl text-center font-bold text-green-600 mt-4",
+          textOutput("parties_elect_mps")  # Number to display
+        )
+      )
+    ),
+    
+    # Card 3 - Settings (with number)
+    tags$div(
+      class = "card w-full sm:w-80 md:w-64 bg-base-100 shadow-xl",
+      tags$div(
+        class = "card-body",
+        tags$div(
+          class = "flex items-center",
+          tags$i(class = "fa-solid fa-users-slash text-2xl text-red-600"),  # FontAwesome icon
+          tags$h2(class = "card-title ml-4", i18n$t("Out of Parliament"))
+        ),
+        tags$p(i18n$t("Parties below 3% plus unallocated percentage")),
+        tags$div(
+          class = "text-4xl text-center font-bold text-red-600 mt-4",
+          textOutput("outOfParliament")  # Number to display
+        )
+      )
+    ),
+    
+    # Card 4
+    tags$div(
+      class = "card w-full sm:w-80 md:w-64 bg-base-100 shadow-xl",
+      tags$div(
+        class = "card-body",
+        tags$div(
+          class = "flex items-center",
+          tags$i(class = "fas fa-cog text-2xl text-red-600"),  # FontAwesome icon
+          tags$h2(class = "card-title ml-4", i18n$t("Unallocated Percentage"))
+        ),
+        tags$p(i18n$t("This should not be negative")),
+        tags$div(
+          class = "text-4xl text-center font-bold text-red-600 mt-4",
+          textOutput("unallocatedPercentage")  # Number to display
+        )
+      )
+    )
+  ),
+  
   
   div(class = "py-1 max-w-2xl mx-auto",
   column(width = 12,
@@ -410,10 +486,11 @@ observeEvent(input$selected_language, {
 
     data = reactive({
      data.frame(
-       "Party" = c("ND", "SYRIZA", "PASOK","KKE","Ellisi", "Niki", "Plefsi", "Mera", "Other1", "Other2", "Foni Logikis", "Nea Aristera"),
-       "Perc" = c(input$nd_pct, input$syriza_pct, input$pasok_pct, input$kke_pct,
+       "Party" = c("ND", "SYRIZA", "PASOK","KKE","Ellisi", "Niki", "Plefsi", 
+                   "Mera", "Other1", "Other2", "Foni Logikis", "Nea Aristera"),
+       "Perc" = as.numeric(c(input$nd_pct, input$syriza_pct, input$pasok_pct, input$kke_pct,
                   input$ellisi_pct, input$niki_pct, input$plefsi_pct, input$mera25_pct,
-                  input$other1_pct, input$other2_pct, input$foni_pct, input$nar_pct)
+                  input$other1_pct, input$other2_pct, input$foni_pct, input$nar_pct))
      )
     })
     
@@ -478,7 +555,31 @@ observeEvent(input$selected_language, {
           })
         })
         
-      
+        observeEvent(data(), {
+          output$parties_elect_mps <- renderText({
+            parties_elect_mps(data())
+          })
+        })
+        
+        observeEvent(data(), {
+          output$outOfParliament <- renderText({
+            paste0(round((100 - inparliament(data())), digits =2), "%")
+          })
+        })
+        
+        observeEvent(data(), {
+          output$unallocatedPercentage <- renderText({
+            paste0(round(unallocated(data()), digits =2), "%")
+          })
+        })
+        
+        
+        observeEvent(data(), {
+          output$diff_first_second <- renderText({
+            paste0(round(find_difference(data()), digits =2), "%")
+          })
+        })
+
 }
 
 # Run the application 

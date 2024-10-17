@@ -157,3 +157,19 @@ nobonus = function(data){
   return(bi)
   
 }
+
+parties_elect_mps = function(custom_data){
+  custom_data |>
+    
+    dplyr::filter(Perc >=3) |>
+    nrow()
+}
+
+find_difference = function(data){
+  temp_data = data |>
+    slice_max(order_by = Perc, n = 2)
+  
+  difference = abs(diff(temp_data$Perc))
+  
+  return(difference)
+}

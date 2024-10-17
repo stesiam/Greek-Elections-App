@@ -34,7 +34,12 @@
 }
 
 html{
-  background-image: url("parl.jpg");
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("parl.jpg");
+  background-size: cover;
 }
 
 .shiny-output-error, .shiny-output-error:before { display: none; }
