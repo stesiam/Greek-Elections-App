@@ -289,7 +289,7 @@ ui <- add_cookie_handlers(
                                   )
                               )
                             ),
-                            tags$th(i18n$t("Niki"),
+                            tags$th(i18n$t("Victory"),
                                     tags$div(class = "established",
                                              tags$div(
                                                icon("user-tie")
@@ -341,7 +341,7 @@ ui <- add_cookie_handlers(
                                   )
                               )
                             ),
-                            tags$th(i18n$t("Foni Logikis"),
+                            tags$th(i18n$t("Voice of Reason"),
                                     tags$div(class = "established",
                                              tags$div(
                                                icon("user-tie")
@@ -496,12 +496,15 @@ observeEvent(input$selected_language, {
 
     data = reactive({
      raw_data = data.frame(
-       "Party" = c("ND", "SYRIZA", "PASOK","KKE","Ellisi", "Niki", "Plefsi", 
-                   "Mera", "Other1", "Other2", "Foni Logikis", "Nea Aristera"),
-       "FullParty" = c("New Democracy", "Coalition of the Radical Left", "Panhellenic Socialistic Movement",
-                       "Communist Party of Greece", "Greek Solution", "Victory", "Course of Freedom",
-                       "Mera25 - DieM25", "Other Party #1", "Other Party #2",
-                       "Voice of Reason", "New Left"),
+       "Party" = c(i18n$t("ND"), i18n$t("SYRIZA"), i18n$t("PASOK"), i18n$t("KKE"),
+                   i18n$t("Ellisi"), i18n$t("Niki"), i18n$t("Plefsi"), 
+                   i18n$t("MeRA25"), i18n$t("Other1"), i18n$t("Other2"),
+                   i18n$t("Foni"), i18n$t("NAR")),
+       "FullParty" = c(i18n$t("New Democracy"), i18n$t("Coalition of the Radical Left"), i18n$t("Panhellenic Socialistic Movement"),
+                       i18n$t("Communist Party of Greece"), i18n$t("Greek Solution"), i18n$t("Victory"), 
+                       i18n$t("Course of Freedom"),
+                       i18n$t("MeRA25"), i18n$t("Other Party #1"), i18n$t("Other Party #2"),
+                       i18n$t("Voice of Reason"), i18n$t("New Left")),
        "Perc" = as.numeric(c(input$nd_pct, input$syriza_pct, input$pasok_pct, input$kke_pct,
                   input$ellisi_pct, input$niki_pct, input$plefsi_pct, input$mera25_pct,
                   input$other1_pct, input$other2_pct, input$foni_pct, input$nar_pct)),
@@ -622,7 +625,7 @@ observeEvent(input$selected_language, {
                 y = Seats,
                 label = FullParty,
                 color = col),
-              name = "Representatives",
+              name = i18n$t("Representatives"),
               showInLegend = TRUE,
               size = "125%",
               center = list("50%", "75%"),

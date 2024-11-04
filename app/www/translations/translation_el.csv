@@ -5,17 +5,28 @@ Party,Κομμα
 Percentage,Ποσοστο
 Seats,Εδρες
 New Democracy,Nέα Δημοκρατία
-SYRIZA,ΣΥΡΙΖΑ
-PASOK,ΠΑΣΟΚ
-KKE,ΚΚΕ
+Coalition of the Radical Left,Συνασπισμός Ριζοσπαστικής Αριστεράς
+Panhellenic Socialistic Movement,Πανελλήνιο Σοσιαλιστικό Κίνημα
+Communist Party of Greece,Κομμουνιστικό Κόμμα Ελλάδας
 Greek Solution,Ελληνική Λύση
-Niki,Νίκη
+Victory,Νίκη
 Course of Freedom,Πλεύση Ελευθερίας
-Foni Logikis,Φωνή Λογικής
+Voice of Reason,Φωνή Λογικής
 MeRA25,ΜέΡΑ25
 New Left,Νέα Αριστερά
 Other Party #1,Άλλο κόμμα #1
 Other Party #2,Άλλο κόμμα #2
+ND,ΝΔ
+SYRIZA,ΣΥΡΙΖΑ
+PASOK,ΠΑΣΟΚ
+KKE,ΚΚΕ
+Ellisi,Λύση
+Plefsi,Πλεύση
+Other1,Άλλο Α
+Other2,Άλλο Β
+Foni,Φωνή
+NAR,ΝΑΡ
+Niki,Νίκη
 Choose Electoral System: ,Εκλογικό σύστημα: 
 Bonus 40 Seats (2007-2009),Μπόνους 40 εδρών (2007-2009)
 Bonus 50 Seats (2012-2019),Μπόνους 50 εδρών (2012-2019)
@@ -51,3 +62,4 @@ Parliament Overview,Επισκόπηση Βουλής
 Parties below 3% plus unallocated percentage,Κόμματα κάτω του 3% συν ακατανέμητα
 Percentage Difference,Ποσοστιαία Διαφορά
 Between 1st and 2nd party,Μεταξύ πρώτου και δεύτερου κόμματος
+Representatives,Βουλευτές
