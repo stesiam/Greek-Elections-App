@@ -1,10 +1,15 @@
 
 a = data.frame(
   "Party" = c("ND", "SYRIZA", "PASOK","KKE","Ellisi", "Niki", "Plefsi", "Mera", "Other1", "Other2"),
-  "Perc" = c(18, 30, 11, 8, 7, 3, 3, 4, 3, 2)
+  "Perc" = c(18, 30, 11, 8, 7, 3, 3, 4, 3, 2),
+  "col" = c("#008AC5", "#FFC0CB", "#64A12D", "#EB001F",
+            "#608AC5", "#CC7722", "#E34234", "#BE3075",
+            "#808588", "#777B7E"),
+  "orientation" = c(7,5,6, 2, 9,8,3,4, 1,10)
 )
 
-
+a <- a %>% 
+  arrange(desc(orientation))
 calculate_seats = function(a){
   
   

@@ -1,53 +1,53 @@
 en,el
-"Greek Elections App","Βουλευτικες Εκλογες"
-"English","Αγγλικα"
-"Greek","Ελληνικα"
-"Party", "Κομμα"
-"Percentage", "Ποσοστο"
-"Seats", "Εδρες"
-"New Democracy","Nέα Δημοκρατία"
-"SYRIZA","ΣΥΡΙΖΑ"
-"PASOK","ΠΑΣΟΚ"
-"KKE","ΚΚΕ"
-"Greek Solution", "Ελληνική Λύση"
-"Niki", "Νίκη"
-"Course of Freedom", "Πλεύση Ελευθερίας"
-"Foni Logikis", "Φωνή Λογικής"
-"MeRA25", "ΜέΡΑ25"
-"New Left", "Νέα Αριστερά"
-"Other Party #1", "Άλλο κόμμα #1"
-"Other Party #2", "Άλλο κόμμα #2"
-"Choose Electoral System: ", "Εκλογικό σύστημα: "
-"Bonus 40 Seats (2007-2009)", "Μπόνους 40 εδρών (2007-2009)"
-"Bonus 50 Seats (2012-2019)", "Μπόνους 50 εδρών (2012-2019)"
-"No Bonus (2023Α)", "Αναλογική κατανομή (2023Α)"
-"Proportional Bonus (2023Β-", "Αναλογικό μπόνους (2023Β-)"
-"Center-right/Right", "Κεντροδεξιά/Δεξιά"
-"Center-left/Left", "Κεντροαριστερά/Αριστερά"
-"Center-left", "Κεντροαριστερά"
-"Left/Far-left", "Αριστερά"
-"Right/Far-right", "Δεξιά/Ακροδεξιά"
-"Far-right", "Ακροδεξιά"
-"Catch-all", "Πολυσυλλεκτικό"
-"Far-left", "Ακροαριστερά"
-"Left", "Αριστερά"
-"Mitsotakis K.", "Μητσοτάκης Κ."
-"Kasselakis S.", "Κασσελάκης Σ."
-"Androulakis N.", "Ανδρουλάκης Ν."
-"Velopoulos K.", "Βελόπουλος Κ."
-"Koutsoumpas D.", "Κουτσούμπας Δ."
-"Natsios D.", "Νατσιός Δ."
-"Konstantopoulou Z.", "Κωνσταντοπούλου Ζ."
-"Latinopoulou A.", "Λατινοπούλου Α."
-"Varoufakis Y.", "Βαρουφάκης Γ."
-"Haritsis A.", "Χαρίτσης Α."
-"Majority Required", "Ποσοστό για πλειοψηφία"
-"Parliament Parties", "Κοινοβουλευτικά κόμματα"
-"Out of Parliament", "Ποσοστό εκτός Βουλής"
-"Unallocated Percentage", "Ακατανέμητο ποσοστό"
-"Number of parties to elect MPs", "Αριθμός κομμάτων με ποσοστό άνω του 3%"
-"Given the (%) of parties out of parliament", "Με βάση το ποσοστό των κομμάτων εκτός βουλής"
-"This should not be negative", "Αυτό ΔΕΝ πρέπει να είναι αρνητικό"
-"Parties below 3% plus unallocated percentage", "Κόμματα κάτω του 3% συν ακατανέμητα"
-"Percentage Difference", "Ποσοστιαία Διαφορά"
-"Between 1st and 2nd party", "Μεταξύ πρώτου και δεύτερου κόμματος"
+English,Αγγλικα
+Greek,Ελληνικα
+Party,Κομμα
+Percentage,Ποσοστο
+Seats,Εδρες
+New Democracy,Nέα Δημοκρατία
+SYRIZA,ΣΥΡΙΖΑ
+PASOK,ΠΑΣΟΚ
+KKE,ΚΚΕ
+Greek Solution,Ελληνική Λύση
+Niki,Νίκη
+Course of Freedom,Πλεύση Ελευθερίας
+Foni Logikis,Φωνή Λογικής
+MeRA25,ΜέΡΑ25
+New Left,Νέα Αριστερά
+Other Party #1,Άλλο κόμμα #1
+Other Party #2,Άλλο κόμμα #2
+Choose Electoral System: ,Εκλογικό σύστημα: 
+Bonus 40 Seats (2007-2009),Μπόνους 40 εδρών (2007-2009)
+Bonus 50 Seats (2012-2019),Μπόνους 50 εδρών (2012-2019)
+No Bonus (2023Α),Αναλογική κατανομή (2023Α)
+Proportional Bonus (2023Β-,Αναλογικό μπόνους (2023Β-)
+Center-right/Right,Κεντροδεξιά/Δεξιά
+Center-left/Left,Κεντροαριστερά/Αριστερά
+Center-left,Κεντροαριστερά
+Left/Far-left,Αριστερά
+Right/Far-right,Δεξιά/Ακροδεξιά
+Far-right,Ακροδεξιά
+Catch-all,Πολυσυλλεκτικό
+Far-left,Ακροαριστερά
+Left,Αριστερά
+Mitsotakis K.,Μητσοτάκης Κ.
+Kasselakis S.,Κασσελάκης Σ.
+Androulakis N.,Ανδρουλάκης Ν.
+Velopoulos K.,Βελόπουλος Κ.
+Koutsoumpas D.,Κουτσούμπας Δ.
+Natsios D.,Νατσιός Δ.
+Konstantopoulou Z.,Κωνσταντοπούλου Ζ.
+Latinopoulou A.,Λατινοπούλου Α.
+Varoufakis Y.,Βαρουφάκης Γ.
+Haritsis A.,Χαρίτσης Α.
+Majority Required,Ποσοστό για πλειοψηφία
+Parliament Parties,Κοινοβουλευτικά κόμματα
+Out of Parliament,Ποσοστό εκτός Βουλής
+Unallocated Percentage,Ακατανέμητο ποσοστό
+Number of parties to elect MPs,Αριθμός κομμάτων με ποσοστό άνω του 3%
+Given the (%) of parties out of parliament,Με βάση το ποσοστό των κομμάτων εκτός βουλής
+This should not be negative,Αυτό ΔΕΝ πρέπει να είναι αρνητικό
+Parliament Overview,Επισκόπηση Βουλής
+Parties below 3% plus unallocated percentage,Κόμματα κάτω του 3% συν ακατανέμητα
+Percentage Difference,Ποσοστιαία Διαφορά
+Between 1st and 2nd party,Μεταξύ πρώτου και δεύτερου κόμματος

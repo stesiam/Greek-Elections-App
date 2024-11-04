@@ -4,11 +4,12 @@ library(shiny.i18n)
 library(dplyr)
 library(cookies)
 library(htmltools)
+library(highcharter)
 
 source("global.R")
 
 
-i18n <- Translator$new(translation_csvs_path = "www/translations/")
+i18n <- Translator$new(translation_csvs_path = "www/translations")
 i18n$set_translation_language("en")
 
 # options(shiny.launch.browser = .rs.invokeShinyWindowExternal)
@@ -125,7 +126,16 @@ ui <- add_cookie_handlers(
       )
     )
   ),
-  
+  div(class = "py-1 max-w-2xl mx-auto",
+      column(width = 12,  
+  div(class = "card flex justify-center max-w-2xl bg-base-100",
+      tags$div(
+        class = "flex p-2 justify-center items-center",
+        tags$i(class = "fa-solid fa-users-slash text-2xl text-red-600"),  # FontAwesome icon
+        tags$h2(class = "card-title ml-4", i18n$t("Parliament Overview"))
+      ),
+      highchartOutput("my_chart")
+  ))),
   
   div(class = "py-1 max-w-2xl mx-auto",
   column(width = 12,
@@ -485,19 +495,33 @@ observeEvent(input$selected_language, {
 })
 
     data = reactive({
-     data.frame(
+     raw_data = data.frame(
        "Party" = c("ND", "SYRIZA", "PASOK","KKE","Ellisi", "Niki", "Plefsi", 
                    "Mera", "Other1", "Other2", "Foni Logikis", "Nea Aristera"),
+       "FullParty" = c("New Democracy", "Coalition of the Radical Left", "Panhellenic Socialistic Movement",
+                       "Communist Party of Greece", "Greek Solution", "Victory", "Course of Freedom",
+                       "Mera25 - DieM25", "Other Party #1", "Other Party #2",
+                       "Voice of Reason", "New Left"),
        "Perc" = as.numeric(c(input$nd_pct, input$syriza_pct, input$pasok_pct, input$kke_pct,
                   input$ellisi_pct, input$niki_pct, input$plefsi_pct, input$mera25_pct,
-                  input$other1_pct, input$other2_pct, input$foni_pct, input$nar_pct))
-     )
+                  input$other1_pct, input$other2_pct, input$foni_pct, input$nar_pct)),
+       "col" = c("#008AC5", "#FFC0CB", "#64A12D", "#EB001F",
+                 "#608AC5", "#CC7722",  "#BE3075","#E34234",
+                 "#808588", "#777B7E", "#808AC5", "#ff3050"),
+       "orientation" = c(7,5,6, 2, 9,8,3,4, 1,10,9.5,4.5)
+        )
     })
+    
+    data_without_NAs = reactive({
+      data() |>
+        mutate(Perc = ifelse(is.na(Perc), 0, Perc))
+    })
+    
     
     
     calc_seats = reactive({
       req(input$elect_systems) 
-      data = data() 
+      data = data_without_NAs() 
       
       if (input$elect_systems == "bonus40") {
         data %>%
@@ -555,29 +579,57 @@ observeEvent(input$selected_language, {
           })
         })
         
-        observeEvent(data(), {
+        observeEvent(data_without_NAs(), {
           output$parties_elect_mps <- renderText({
-            parties_elect_mps(data())
+            parties_elect_mps(data_without_NAs())
           })
         })
         
-        observeEvent(data(), {
+        observeEvent(data_without_NAs(), {
           output$outOfParliament <- renderText({
-            paste0(round((100 - inparliament(data())), digits =2), "%")
+            paste0(round((100 - inparliament(data_without_NAs())), digits =2), "%")
           })
         })
         
-        observeEvent(data(), {
+        observeEvent(data_without_NAs(), {
           output$unallocatedPercentage <- renderText({
-            paste0(round(unallocated(data()), digits =2), "%")
+            paste0(round(unallocated(data_without_NAs()), digits =2), "%")
           })
         })
         
         
-        observeEvent(data(), {
+        observeEvent(data_without_NAs(), {
           output$diff_first_second <- renderText({
-            paste0(round(find_difference(data()), digits =2), "%")
+            paste0(round(find_difference(data_without_NAs()), digits =2), "%")
           })
+        })
+        
+        output$my_chart <- renderHighchart({
+         w =  data_without_NAs() |>
+            mutate(
+              Seats = calc_seats()$IntSeats
+            ) %>%
+           dplyr::filter(Seats >0) %>%
+           arrange(orientation)
+         
+         
+         
+            hchart(
+              w,
+              "item",
+              hcaes(
+                name = Party,
+                y = Seats,
+                label = FullParty,
+                color = col),
+              name = "Representatives",
+              showInLegend = TRUE,
+              size = "125%",
+              center = list("50%", "75%"),
+              startAngle = -100,
+              endAngle  = 100
+        ) %>%
+          hc_legend(labelFormat = '{FullParty} <span style="opacity: 0.4">{y}</span>')
         })
 
 }
