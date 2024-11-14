@@ -1,0 +1,17 @@
+---
+title: "Greek Elections Report"
+subtitle: "Report created at `r Sys.Date()` "
+output:
+  pdf_document:
+    toc: false
+    fig_caption: false
+---
+
+
+### Seats Allocation
+
+
+### Graphical 
+
+
+### Compare

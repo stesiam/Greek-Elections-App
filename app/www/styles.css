@@ -86,3 +86,38 @@ html{
   object-fit: contain;
 }
 
+.far .fa-file-pdf{
+  font-size: x-large;
+}
+
+@media (prefers-color-scheme: dark) {
+  .highcharts-background{
+    fill: #000000;
+  }
+  .highcharts-legend-item text{
+    fill: #ffffff;
+  }
+  .highcharts-point path {
+    stroke: transparent;
+  }
+}
+
+[type="text"]{
+  background-color: transparent;
+}
+
+.card {
+	overflow: visible;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+select{
+  background-color: transparent;
+}
+
+.select{
+  display: contents;
+}
